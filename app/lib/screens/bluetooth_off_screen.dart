@@ -12,6 +12,7 @@ class BluetoothOffScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Bluetooth is Off'),
       ),
+      /*
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -40,7 +41,7 @@ class BluetoothOffScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      ),*/
     );
   }
 }
