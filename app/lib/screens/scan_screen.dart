@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:thesis_app/controllers/bluetooth_controller.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:thesis_app/screens/bluetooth_off_screen.dart';
+import 'package:thesis_app/screens/connect_screen.dart';
 
 class ScanScreen extends StatelessWidget {
   const ScanScreen({Key? key}) : super(key: key);
@@ -65,11 +65,7 @@ class ScanScreen extends StatelessWidget {
 
                     if (snapshot.hasData) {
                       final results = snapshot.data!;
-                      final finalResults = snapshot.data!.length;
-/*
-                      if (results.isEmpty) {
-                        return const Center(child: Text("No devices found."));
-                      } */
+                      final finalResults = snapshot.data!.length;            
 
                       return ListView.builder(
                         shrinkWrap: true,
@@ -82,21 +78,30 @@ class ScanScreen extends StatelessWidget {
                               title: Text(data.device.platformName),
                               subtitle: Text(data.device.remoteId.toString()),
                               trailing: Text(data.rssi.toString()),
-                            ),
-                          );
-                        });
-                    } else {
-                        return const Center(child: Text("No devices found."));
-                    }
-                  },
+
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder:(context) => ConnectScreen(device: data.device),
+                                  ),
+                                );
+                              },
+                              ),
+                              );
+                            });
+                        } else {
+                            return const Center(child: Text("No devices found."));
+                        }
+                      },
+                    ),
+                  ],
                 ),
-              ],
-              ),
+              );
+            },
           );
-        },
-      );
-    }
-  )
-  );
+        }
+      )
+    );
   }
 }
