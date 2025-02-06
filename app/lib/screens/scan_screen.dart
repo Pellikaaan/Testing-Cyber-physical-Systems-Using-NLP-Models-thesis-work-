@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:thesis_app/controllers/bluetooth_controller.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:thesis_app/screens/bluetooth_off_screen.dart';
+import 'package:thesis_app/screens/connect_screen.dart';
 
 class ScanScreen extends StatelessWidget {
   const ScanScreen({Key? key}) : super(key: key);
@@ -59,44 +59,60 @@ class ScanScreen extends StatelessWidget {
                   stream: controller.scanResults,
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(child: CircularProgressIndicator(),
+                      return const Center(
+                        child: Column(
+                          children: [CircularProgressIndicator(),
+                            SizedBox(height: 10),
+                            Text("Scanning for devices...", style: TextStyle(fontSize: 16)),
+                          ])
                       );
                     }
 
-                    if (snapshot.hasData) {
-                      final results = snapshot.data!;
-                      final finalResults = snapshot.data!.length;
-/*
-                      if (results.isEmpty) {
-                        return const Center(child: Text("No devices found."));
-                      } */
-
-                      return ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: finalResults,
-                        itemBuilder: (context, index){
-                          final data = results[index];
-                          return Card(
-                            elevation: 2,
-                            child: ListTile(
-                              title: Text(data.device.platformName),
-                              subtitle: Text(data.device.remoteId.toString()),
-                              trailing: Text(data.rssi.toString()),
-                            ),
-                          );
-                        });
-                    } else {
-                        return const Center(child: Text("No devices found."));
+                    if (!snapshot.hasData || snapshot.data == null || snapshot.data!.isEmpty) {
+                      return const Center(
+                        child: Column(
+                          children: [
+                          SizedBox(height: 10),
+                          Text("No devices found.", style: TextStyle(fontSize: 16)),
+                        ])
+                      );
                     }
-                  },
+
+                    
+                    final results = snapshot.data!;           
+
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: results.length,
+                      itemBuilder: (context, index){
+                        final data = results[index];
+                        return Card(
+                          elevation: 2,
+                          child: ListTile(
+                            title: Text(data.device.platformName),
+                            subtitle: Text(data.device.remoteId.toString()),
+                            trailing: Text(data.rssi.toString()),
+
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder:(context) => ConnectScreen(device: data.device),
+                                ),
+                               );
+                              },
+                              ),
+                              );
+                            });
+                        }
+                    ),
+                  ],
                 ),
-              ],
-              ),
+              );
+            },
           );
-        },
-      );
-    }
-  )
-  );
+        }
+      )
+    );
   }
 }
