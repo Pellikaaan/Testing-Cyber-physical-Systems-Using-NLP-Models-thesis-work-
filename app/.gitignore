@@ -18,8 +18,7 @@ build/
 # Icon must end with two \n
 Icon?
    
-#
-app/pubspec.lock
+pubspec.lock
 
 # Trashes
 .Trashes
