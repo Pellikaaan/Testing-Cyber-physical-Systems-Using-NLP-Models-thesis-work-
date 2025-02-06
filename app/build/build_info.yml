@@ -1,0 +1,54 @@
+cmake:
+  application:
+    configuration-dir: /Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/app
+    source-dir: /Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/app
+  board:
+    name: nrf5340dk
+    qualifiers: nrf5340/cpunet
+    revision: 
+  devicetree:
+    bindings-dirs:
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/bindings
+    files:
+     - /Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpunet.dts
+    include-dirs:
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/modules/hal/atmel/include
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/modules/hal/gigadevice/include
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/modules/hal/microchip/include
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/modules/hal/microchip/dts
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/modules/hal/nuvoton/dts
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/modules/hal/nxp/dts
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/modules/hal/stm32/dts
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/common
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/x86
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/xtensa
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/sparc
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/riscv
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/posix
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/nios2
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/arm64
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/arm
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/arc
+     - /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts
+  kconfig:
+    files:
+     - /Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpunet_defconfig
+     - /Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/app/prj.conf
+    user-files:
+     - /Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/app/prj.conf
+  toolchain:
+    name: zephyr
+    path: /Users/pelli/zephyr-sdk-0.17.0
+  vendor-specific:
+    nordic:
+      svdfile: /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/modules/hal/nordic/nrfx/mdk/nrf5340_network.svd
+  zephyr:
+    version: 4.0.99
+    zephyr-base: /Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr
+version: 0.1.0
+west:
+  command: /Users/pelli/.local/bin/west build -b nrf5340dk/nrf5340/cpunet --pristine
+  topdir: /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-
+  version: 1.3.0
