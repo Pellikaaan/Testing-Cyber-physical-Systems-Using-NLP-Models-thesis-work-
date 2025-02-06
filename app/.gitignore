@@ -19,6 +19,7 @@ build/
 Icon?
    
 #
+app/pubspec.lock
 
 # Trashes
 .Trashes
