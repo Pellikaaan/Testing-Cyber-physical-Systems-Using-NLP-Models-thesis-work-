@@ -17,6 +17,8 @@ build/
 
 # Icon must end with two \n
 Icon?
+   
+#
 
 # Trashes
 .Trashes
