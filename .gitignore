@@ -17,8 +17,7 @@ build/
 
 # Icon must end with two \n
 Icon?
-   
-#
+
 
 # Trashes
 .Trashes
@@ -51,7 +50,7 @@ ios/Podfile.lock
 android/.gradle/
 android/app/debug/
 android/app/release/
-android/local.properties
+app/android/local.properties
 
 # IntelliJ and Android Studio
 *.ijwb/
