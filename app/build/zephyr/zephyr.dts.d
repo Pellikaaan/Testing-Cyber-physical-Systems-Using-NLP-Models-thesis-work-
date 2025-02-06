@@ -1,0 +1,29 @@
+empty_file.o: \
+ /Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/misc/empty_file.c \
+ /Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpunet.dts \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/arm/nordic/nrf5340_cpunet_qkaa.dtsi \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/common/mem.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/arm/nordic/nrf5340_cpunet.dtsi \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/arm/armv8-m.dtsi \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/common/skeleton.dtsi \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/common/nordic/nrf_common.dtsi \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/dt-bindings/adc/adc.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/dt-bindings/dt-util.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/sys/util_macro.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/sys/util_internal.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/sys/util_loops.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/sys/util_listify.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/sys/util_internal_is_eq.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/sys/util_internal_util_inc.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/sys/util_internal_util_dec.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/sys/util_internal_util_x2.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/dt-bindings/gpio/gpio.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/dt-bindings/i2c/i2c.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/dt-bindings/input/input-event-codes.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/dt-bindings/pinctrl/nrf-pinctrl.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/include/zephyr/dt-bindings/pwm/pwm.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/common/freq.h \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/arm/nordic/override.dtsi \
+ /Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/boards/nordic/nrf5340dk/nrf5340dk_common.dtsi \
+ /Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpunet-pinctrl.dtsi \
+ /Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/dts/common/nordic/nrf5340_shared_sram_partition.dtsi

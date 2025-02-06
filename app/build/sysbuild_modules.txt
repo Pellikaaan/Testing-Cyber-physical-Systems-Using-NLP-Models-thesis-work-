@@ -1,0 +1,1 @@
+"mcuboot":"/Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/bootloader/mcuboot":"/Users/pelli/Documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/bootloader/mcuboot/boot/zephyr/sysbuild"
