@@ -21,13 +21,13 @@ class BluetoothController extends GetxController {
     });
   }
 
-
   Future<void> scanDevices() async {
     if (isScanning.value) return;
 
     isScanning.value = true;
 
     try {
+      print("Running Start scan.");
       await FlutterBluePlus.startScan(timeout: const Duration(seconds: 10), androidUsesFineLocation: true);
     } catch (e) {
       print("Error during scan: $e");

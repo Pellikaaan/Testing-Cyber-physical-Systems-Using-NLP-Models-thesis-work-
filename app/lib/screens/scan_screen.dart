@@ -59,41 +59,52 @@ class ScanScreen extends StatelessWidget {
                   stream: controller.scanResults,
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(child: CircularProgressIndicator(),
+                      return const Center(
+                        child: Column(
+                          children: [CircularProgressIndicator(),
+                            SizedBox(height: 10),
+                            Text("Scanning for devices...", style: TextStyle(fontSize: 16)),
+                          ])
                       );
                     }
 
-                    if (snapshot.hasData) {
-                      final results = snapshot.data!;
-                      final finalResults = snapshot.data!.length;            
+                    if (!snapshot.hasData || snapshot.data == null || snapshot.data!.isEmpty) {
+                      return const Center(
+                        child: Column(
+                          children: [
+                          SizedBox(height: 10),
+                          Text("No devices found.", style: TextStyle(fontSize: 16)),
+                        ])
+                      );
+                    }
 
-                      return ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: finalResults,
-                        itemBuilder: (context, index){
-                          final data = results[index];
-                          return Card(
-                            elevation: 2,
-                            child: ListTile(
-                              title: Text(data.device.platformName),
-                              subtitle: Text(data.device.remoteId.toString()),
-                              trailing: Text(data.rssi.toString()),
+                    
+                    final results = snapshot.data!;           
 
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder:(context) => ConnectScreen(device: data.device),
-                                  ),
-                                );
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: results.length,
+                      itemBuilder: (context, index){
+                        final data = results[index];
+                        return Card(
+                          elevation: 2,
+                          child: ListTile(
+                            title: Text(data.device.platformName),
+                            subtitle: Text(data.device.remoteId.toString()),
+                            trailing: Text(data.rssi.toString()),
+
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder:(context) => ConnectScreen(device: data.device),
+                                ),
+                               );
                               },
                               ),
                               );
                             });
-                        } else {
-                            return const Center(child: Text("No devices found."));
                         }
-                      },
                     ),
                   ],
                 ),
