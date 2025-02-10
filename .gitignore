@@ -1,8 +1,8 @@
 # Flutter/Dart-related
-.dart_tool/
-.flutter-plugins
+app/.dart_tool/
+app/.flutter-plugins
 app/.flutter-plugins-dependencies
-.packages
+app/.packages
 build/
 .pub-cache/
 .pub/
