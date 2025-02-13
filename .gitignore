@@ -93,3 +93,5 @@ generated/
 
 #MacOS System
 .DS_Store
+
+external_repos/
