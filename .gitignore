@@ -1,6 +1,6 @@
 
 # Ignore downloaded models
-
+models/
 
 
 app/*
