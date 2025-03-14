@@ -9,6 +9,7 @@ class BluetoothController extends GetxController {
   var isConnected = false.obs;
   var connectedDeviceName = "".obs;
   final File logFile = File("ble_logs.txt");
+  DateTime? connectionStartTime;
 
   @override
   void onInit() {
@@ -38,20 +39,34 @@ class BluetoothController extends GetxController {
 
 //Log connections and disconnections in text file for the test file to be able to read info about connections
   FlutterBluePlus.connectedDevices.listen((devices) {
+
       if (devices.isNotEmpty) {
         isConnected.value = true;
         connectedDeviceName.value = devices.first.platformName;
-        String logEntry = "Connected to: ${devices.first.platformName}\n";
+        connectionStartTime = DateTime.now();
+        String timestampConnect = connectionStartTime!.toIso8601String();
+        String logEntry = "[$timestampConnect] Connected to: ${devices.first.platformName}\n";
         logFile.writeAsStringSync(logEntry, mode: FileMode.append);
         print(logEntry);
       } else {
         isConnected.value = false;
-        logFile.writeAsStringSync("Disconnected.\n", mode: FileMode.append);
-        print("Disconnected.");
+
+        if (connectionStartTime != null) {
+          DateTime timestampDisconnect = DateTime.now();
+          double connectionDuration = timestampDisconnect.difference(connectionStartTime!).inSeconds.toDouble();
+          String logEntry = "[$timestampDisconnect] Disconnected. Connection duration: ${connectionDuration} seconds\n";
+          logFile.writeAsStringSync(logEntry, mode: FileMode.append);
+          print(logEntry);
+
+          connectionStartTime = null;
+        } else {
+          logFile.writeAsStringSync("Disconnected (No previous connection recorded).\n", mode: FileMode.append);
+          print("Disconnected (No previous connection recorded).");
+      }
       }
     }
-    );
-  }
+  );
+}
 
   Future<void> scanDevices() async {
     if (isScanning.value) return;
