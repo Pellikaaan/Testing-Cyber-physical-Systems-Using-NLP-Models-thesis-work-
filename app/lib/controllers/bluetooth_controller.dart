@@ -16,19 +16,6 @@ class BluetoothController extends GetxController {
   void onInit() {
     super.onInit();
 
-/*
-    FlutterBluePlus.scanResults.listen((results) {
-      if (results.isEmpty) {
-        print("No devices found during scan.");
-      } else {
-        for (var result in results) {
-          print("Found device: ${result.device.platformName}, RSSI: ${result.rssi}");
-        }
-      }
-    });
-  }
-*/
-
 // Add log output to text file, for the test file to be able to read info about scanning
     FlutterBluePlus.scanResults.listen((results) {
       for (var result in results) {

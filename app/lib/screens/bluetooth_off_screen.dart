@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+import 'dart:io';
+import 'dart:io' show Platform;
 
 class BluetoothOffScreen extends StatelessWidget {
   final BluetoothAdapterState adapterState;
+  final File logFile = File("ble_logs.txt");
 
-  const BluetoothOffScreen({Key? key, required this.adapterState}) : super(key: key);
+  BluetoothOffScreen({Key? key, required this.adapterState}) : super(key: key) {
+    _logBluetoothOff();
+  }
+
+  void _logBluetoothOff() {
+    final platformType = Platform.isAndroid ? "Android" : "iOS";
+    final logEntry = "[$platformType] Bluetooth is OFF or unavailable: $adapterState\n";
+    logFile.writeAsStringSync(logEntry, mode: FileMode.append);
+    debugPrint(logEntry);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +24,7 @@ class BluetoothOffScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Bluetooth is Off'),
       ),
-      /*
+/*
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +53,8 @@ class BluetoothOffScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),*/
+      ),
+      */
     );
   }
 }
