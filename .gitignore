@@ -95,3 +95,8 @@ generated/
 .DS_Store
 
 external_repos/
+
+# Ignore downloaded models
+models/
+
+

@@ -1,0 +1,62 @@
+{
+    "codegen": {
+      "test_steps": [
+        "Turn on Bluetooth on the device.",
+        "Ensure the Bluetooth device is in pairing mode.",
+        "Check if the device appears in the Bluetooth list.",
+        "Attempt to pair with the device.",
+        "Verify that the connection is successful."
+      ],
+      "expected_outcome": "The Bluetooth device should successfully pair and remain connected.",
+      "failure_condition": [
+        "Device does not appear in the list.",
+        "Pairing attempt fails.",
+        "Connection drops after a few seconds."
+      ]
+    },
+    "gpt4": {
+      "test_steps": [
+        "Go to Bluetooth settings.",
+        "Make sure the Bluetooth device is discoverable.",
+        "Scan for available devices.",
+        "Select the correct device and initiate pairing.",
+        "Confirm the pairing request."
+      ],
+      "expected_outcome": "The device should be listed as 'Connected' in Bluetooth settings.",
+      "failure_condition": [
+        "Device is not found.",
+        "Pairing request is denied.",
+        "Bluetooth connection is unstable."
+      ]
+    },
+    "gpt-neox": {
+        "test_steps": [
+          "Go to Bluetooth settings.",
+          "Make sure the Bluetooth device is discoverable.",
+          "Scan for available devices.",
+          "Select the correct device and initiate pairing.",
+          "Confirm the pairing request."
+        ],
+        "expected_outcome": "The device should be listed as 'Connected' in Bluetooth settings.",
+        "failure_condition": [
+          "Device is not found.",
+          "Pairing request is denied.",
+          "Bluetooth connection is unstable."
+        ]
+      },
+      "starcoder": {
+        "test_steps": [
+          "Go to Bluetooth settings.",
+          "Make sure the Bluetooth device is discoverable.",
+          "Scan for available devices.",
+          "Select the correct device and initiate pairing.",
+          "Confirm the pairing request."
+        ],
+        "expected_outcome": "The device should be listed as 'Connected' in Bluetooth settings.",
+        "failure_condition": [
+          "Device is not found.",
+          "Pairing request is denied.",
+          "Bluetooth connection is unstable."
+        ]
+      }
+  }
