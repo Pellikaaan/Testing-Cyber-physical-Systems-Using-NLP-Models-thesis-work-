@@ -1,5 +1,4 @@
 import pytest
-import datetime
 import re
 
 device_name = "Zephyr" #TODO check what the actual name is
@@ -9,6 +8,7 @@ flutter_log_file = "ble_logs.txt"
 class TestConnectionStability():
 
     def test_device_detection(self):
+        
         found_device = False
 
         with open(flutter_log_file, "r") as log_file:

@@ -10,6 +10,7 @@ class BluetoothController extends GetxController {
   var connectedDeviceName = "".obs;
   final File logFile = File("ble_logs.txt");
   DateTime? connectionStartTime;
+  String get platformType => Platform.isAndroid? "Android" : "iOS";
 
   @override
   void onInit() {
@@ -31,7 +32,7 @@ class BluetoothController extends GetxController {
 // Add log output to text file, for the test file to be able to read info about scanning
     FlutterBluePlus.scanResults.listen((results) {
       for (var result in results) {
-        String logEntry = "Device name: ${result.device.platformName}. RSSI: ${result.rssi}\n";
+        String logEntry = "[$platformType] Device name: ${result.device.platformName}. RSSI: ${result.rssi}\n";
         logFile.writeAsStringSync(logEntry, mode: FileMode.append);
         print(logEntry);
       }
@@ -45,7 +46,7 @@ class BluetoothController extends GetxController {
         connectedDeviceName.value = devices.first.platformName;
         connectionStartTime = DateTime.now();
         String timestampConnect = connectionStartTime!.toIso8601String();
-        String logEntry = "[$timestampConnect] Connected to: ${devices.first.platformName}\n";
+        String logEntry = "[$platformType][$timestampConnect] Connected to: ${devices.first.platformName}\n";
         logFile.writeAsStringSync(logEntry, mode: FileMode.append);
         print(logEntry);
       } else {
@@ -54,13 +55,13 @@ class BluetoothController extends GetxController {
         if (connectionStartTime != null) {
           DateTime timestampDisconnect = DateTime.now();
           double connectionDuration = timestampDisconnect.difference(connectionStartTime!).inSeconds.toDouble();
-          String logEntry = "[$timestampDisconnect] Disconnected. Connection duration: ${connectionDuration} seconds\n";
+          String logEntry = "[$platformType][$timestampDisconnect] Disconnected. Connection duration: ${connectionDuration} seconds\n";
           logFile.writeAsStringSync(logEntry, mode: FileMode.append);
           print(logEntry);
 
           connectionStartTime = null;
         } else {
-          logFile.writeAsStringSync("Disconnected (No previous connection recorded).\n", mode: FileMode.append);
+          logFile.writeAsStringSync("[$platformType] Disconnected (No previous connection recorded).\n", mode: FileMode.append);
           print("Disconnected (No previous connection recorded).");
       }
       }
