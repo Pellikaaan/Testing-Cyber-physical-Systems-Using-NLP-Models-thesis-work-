@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'dart:io';
-import 'dart:io' show Platform;
 
 class BluetoothOffScreen extends StatelessWidget {
   final BluetoothAdapterState adapterState;
