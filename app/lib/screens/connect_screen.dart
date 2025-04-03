@@ -73,7 +73,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
           ),
           const SizedBox(height: 20),
 
-          ElevatedButton(
+          ElevatedButton(key: isConnected ? Key('disconnect_button') : Key('connect_button'),
           onPressed: isConnected ? _disconnectToDevice : _connectToDevice,
           style: ElevatedButton.styleFrom(
             foregroundColor: Colors.white,

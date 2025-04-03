@@ -9,3 +9,9 @@ dependencies:
     sdk: flutter
   flutter_blue_plus: ^1.35.0
   get: ^4.6.5
+
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter

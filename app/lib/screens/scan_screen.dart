@@ -41,7 +41,7 @@ class ScanScreen extends StatelessWidget {
                 const SizedBox(height: 20),
 
                 Center(
-                  child: ElevatedButton(
+                  child: ElevatedButton(key: Key('scan_button'),
                     onPressed: () => controller.scanDevices(),
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
@@ -88,20 +88,21 @@ class ScanScreen extends StatelessWidget {
                         final data = results[index];
                         return Card(
                           elevation: 2,
-                          child: ListTile(
-                            title: Text(data.device.platformName),
-                            subtitle: Text(data.device.remoteId.toString()),
-                            trailing: Text(data.rssi.toString()),
-
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder:(context) => ConnectScreen(device: data.device),
-                                ),
-                               );
-                              },
-                              ),
+                          child: 
+                            ListTile(
+                                key: Key('device_tile_${data.device.platformName}'),
+                                title: Text(data.device.platformName),
+                                subtitle: Text(data.device.remoteId.toString()),
+                                trailing: Text(data.rssi.toString()),
+                                onTap: () {
+                                    Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ConnectScreen(device: data.device),
+                                            ),
+                                          );
+                                        },
+                                      ),
                               );
                             });
                         }
