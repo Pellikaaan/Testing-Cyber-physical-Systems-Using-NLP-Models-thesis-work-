@@ -17,7 +17,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
   @override
   void initState() {
     super.initState();
-    _connectToDevice();
+   // _connectToDevice();
     }
   
 

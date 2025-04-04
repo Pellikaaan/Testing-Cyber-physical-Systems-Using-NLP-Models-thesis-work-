@@ -6,7 +6,7 @@ import 'package:thesis_app/main.dart' as app;
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets("Test scanning and tapping a device", (WidgetTester tester) async {
+  testWidgets("Device compatibility testing", (WidgetTester tester) async {
     app.main();
 
     await tester.pumpAndSettle();
@@ -21,9 +21,17 @@ void main() {
 
     final device = find.byKey(Key('device_tile_Nordic_UART_Service'));
     expect(device, findsOneWidget);
-
     await tester.tap(device);
+
     await tester.pumpAndSettle();
+
+    await tester.pumpAndSettle(const Duration(seconds: 5));
+
+    final connectButton = find.byKey(Key('connect_button'));
+    expect(connectButton, findsOneWidget);
+    await tester.tap(connectButton);
+
+    await tester.pumpAndSettle(const Duration(seconds: 5));
 
   });
 }
