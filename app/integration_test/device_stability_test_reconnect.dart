@@ -34,6 +34,7 @@ void main() {
     await tester.pumpAndSettle(const Duration(seconds: 5));
 
   });
+
 /*
   testWidgets("Device stability testing, bluetooth connection lost.", (WidgetTester tester) async {
     app.main();
