@@ -12,7 +12,7 @@ class BluetoothOffScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Bluetooth is Off'),
       ),
-      /*
+      
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -33,15 +33,16 @@ class BluetoothOffScreen extends StatelessWidget {
               'Adapter State: $adapterState',
               style: const TextStyle(fontSize: 16, color: Colors.grey),
             ),
+    // Enable BT button doesn't lead to anything
             const SizedBox(height: 30),
-            ElevatedButton(
+            ElevatedButton(key: Key('enable_BT_button'),
               onPressed: () {
               },
               child: const Text('Enable Bluetooth'),
             ),
           ],
         ),
-      ),*/
+      ),
     );
   }
 }
