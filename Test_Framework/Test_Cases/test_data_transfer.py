@@ -1,29 +1,39 @@
+from urllib import response
 import pytest
-import re
+import asyncio
 
-flutter_log_file = "ble_logs.txt"
-device_name = "Zephyr" #TODO: Check actual device name
-platforms = ["Android", "iOS"]
-data_pattern = r"Data sent: (.+)" #TODO: Check if this is the expected pattern
+from bleak import BleakClient, discover
 
-class TestDataTransfer():
+DEVICE_NAME = "Nordic_UART_Service"
+NUS_RX_UUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e"
+NUS_TX_UUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
 
-    @pytest.mark.parametrize("platform", platforms)
-    def test_data_transfer_success(self, platform):
-        data_sent_logged = False
-        data_received_logged = False
+@pytest.mark.asyncio
+async def test_ble_write_read():
+    """Test sending data and receiving notifications."""
+    devices = await discover()
+    target_device = next((d for d in devices if d.name and DEVICE_NAME in d.name), None)
+    
+    assert target_device, "BLE device not found!"
 
-#TODO: Check if this is how the lines of data will look, also might need to add lines into send data file for being printed in the log textfile
-        with open(flutter_log_file, "r") as log_file:
-            for line in log_file:
-                if f"[{platform}]" in line:
-                    if "Data sent:" in line:
-                        data_sent_logged = True
-                        print(f"{platform}: Found log for data sent: {line.strip()}")
+    async with BleakClient(target_device.address) as client:
+        assert await client.is_connected(), "Failed to connect to BLE device!"
+        received_data = []
 
-                    if "Data received by device:" in line:
-                        data_received_logged = True
-                        print(f"{platform}: Found log for data received: {line.strip()}")
+        def callback(sender, data: bytearray):
+            try:
+                decoded_data = data.decode("utf-8")
+                print(f"Received from {sender}: {decoded_data}")
+                received_data.append(decoded_data)
+            except UnicodeDecodeError:
+                print(f"Could not decode data: {data}")
 
-        assert data_sent_logged, f"{platform}: No log found for data being sent from Flutter."
-        assert data_received_logged, f"{platform}: No log found for data being received by nRF5340."
+        await client.start_notify(NUS_TX_UUID, callback)
+        await asyncio.sleep(2)
+        test_data = b"Test Message\n"
+        await client.write_gatt_char(NUS_RX_UUID, test_data)
+        await asyncio.sleep(10)  
+        await client.stop_notify(NUS_TX_UUID)
+        print(received_data)
+        assert received_data, "No data received from BLE device!"
+        assert "Test Message" in received_data[0], "Incorrect data received!"
