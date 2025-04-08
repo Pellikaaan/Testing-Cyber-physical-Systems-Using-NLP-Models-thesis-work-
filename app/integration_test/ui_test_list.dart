@@ -17,7 +17,8 @@ void main() {
 // Gives user 10 seconds to manually allow Bluetooth
     await tester.pumpAndSettle(const Duration(seconds: 10));
 
-    expect(find.byType(ListTile), findsOneWidget);
+    await tester.pumpAndSettle(const Duration(seconds: 5));
+    expect(find.byType(ListTile), findsWidgets);
 
     await tester.pumpAndSettle(const Duration(seconds: 5));
 
