@@ -406,13 +406,13 @@ Zephyr-Kernel_IS_TOP_LEVEL:STATIC=ON
 Zephyr-Kernel_SOURCE_DIR:STATIC=/Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/app
 
 //The directory containing a CMake configuration file for Zephyr-sdk.
-Zephyr-sdk_DIR:PATH=/Users/pelli/zephyr-sdk-0.17.0/cmake
+Zephyr-sdk_DIR:PATH=Zephyr-sdk_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for ZephyrAppConfiguration.
 ZephyrAppConfiguration_DIR:PATH=ZephyrAppConfiguration_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for ZephyrBuildConfiguration.
-ZephyrBuildConfiguration_DIR:PATH=ZephyrBuildConfiguration_DIR-NOTFOUND
+ZephyrBuildConfiguration_DIR:PATH=/Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/nrf/share/zephyrbuild-package/cmake
 
 //The directory containing a CMake configuration file for Zephyr.
 Zephyr_DIR:PATH=/Users/pelli/documents/GitHub/Testing-Cyber-physical-Systems-Using-NLP-Models-thesis-work-/zephyr/share/zephyr-package/cmake
@@ -548,7 +548,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=154
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -616,6 +616,8 @@ _Python3_EXECUTABLE:INTERNAL=/Users/pelli/.local/pipx/venvs/west/bin/python
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;13;1;64;<none>;cpython-313-darwin.so;abi3;/opt/homebrew/opt/python@3.13/Frameworks/Python.framework/Versions/3.13/lib/python3.13;/Users/pelli/.local/pipx/venvs/west/lib/python3.13;/Users/pelli/.local/pipx/venvs/west/lib/python3.13/site-packages;/Users/pelli/.local/pipx/venvs/west/lib/python3.13/site-packages
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=a0099481935fe344253369dd7f56b643
+//Interpreter reason failure
+_Python3_Interpreter_REASON_FAILURE:INTERNAL=
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 
