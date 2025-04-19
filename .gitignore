@@ -100,3 +100,5 @@ external_repos/
 models/
 
 
+app/pubspec.lock
+app/.dart_tool/package_config.json
