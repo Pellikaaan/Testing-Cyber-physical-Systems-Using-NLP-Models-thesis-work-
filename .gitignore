@@ -102,3 +102,7 @@ models/
 
 app/pubspec.lock
 app/.dart_tool/package_config.json
+app/.dart_tool/package_config.json
+app/.dart_tool/package_config_subset
+app/.dart_tool/version
+app/pubspec.lock
