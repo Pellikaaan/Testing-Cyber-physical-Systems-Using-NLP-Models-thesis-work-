@@ -12,7 +12,6 @@ Future<void> navigateToDevice(WidgetTester tester) async {
   expect(scanButton, findsOneWidget);
   await tester.tap(scanButton);
 
-// Gives user 10 seconds to manually allow bluetooth connection on the phone while test is running
   await tester.pumpAndSettle(const Duration(seconds: 10));
 
   await tester.pumpAndSettle();
