@@ -71,15 +71,16 @@ west flash
 to use a different nordic semiconductor board, please look at https://www.nordicsemi.com/Products/Wireless/Bluetooth-Low-Energy to find you hardware device and board-specific configurations 
 
 # Repository structure 
-flutter_app/
-nrf/
-Test_Framework/
-├── starcoder_model.py
-├── codegen_model.py
-├── test_prompts/
-├── evaluation/
-├── requirements.txt
-README.md
+.
+├── flutter_app/              
+├── nrf/                       
+├── Test_Framework/           
+│   ├── starcoder_model.py    
+│   ├── codegen_model.py      
+│   ├── test_prompts/         
+│   ├── evaluation/           
+│   └── requirements.txt      
+├── README.md                 
 
 ## How to reproduce results
 How to Reproduce Results
