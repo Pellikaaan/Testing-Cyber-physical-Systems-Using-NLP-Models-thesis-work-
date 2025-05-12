@@ -3,7 +3,7 @@ Thesis work 2025
 
 This thesis investigates the feasibility of using Natural Language Processing (NLP) models for automating test generation in Flutter applications that utilize Bluetooth (BLE) communication, particularly in the context of Cyber-Physical Systems (CPS).
 
-The core idea is to evaluate how well open-source NLP code-generation models can generate test cases — including edge cases — compared to manually written ones.
+The core idea is to evaluate how well open-source NLP code-generation models can generate test cases - including edge cases - compared to manually written ones.
 
 ## Objectives of this thesis
 •	Evaluate the ability of NLP models to generate E2E and integration tests for Bluetooth-enabled Flutter apps.
