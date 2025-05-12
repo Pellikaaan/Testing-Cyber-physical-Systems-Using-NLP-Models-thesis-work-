@@ -71,16 +71,17 @@ west flash
 to use a different nordic semiconductor board, please look at https://www.nordicsemi.com/Products/Wireless/Bluetooth-Low-Energy to find you hardware device and board-specific configurations 
 
 # Repository structure 
+    •	/
 	•	flutter_app/ – Flutter BLE application
 	•	nrf/ – Nordic SDK sample (peripheral_uart)
 	•	Test_Framework/ – NLP test framework
-    •	requirements.txt – Python dependencies
-	•	README.md – Project documentation (this file)  
-	•	NLP_models/ – Scripts for each model:
+    •	requirements.txt – Python dependencies 
+	•	Test_Framework/NLP_models/ – Scripts for each model:
 	•	test_CodeGen.py
 	•	test_CodeT5.py
 	•	test_GPT_Neox.py
 	•	test_StarCoder.py
+    •	README.md
 	    
 
 ## How to reproduce results
