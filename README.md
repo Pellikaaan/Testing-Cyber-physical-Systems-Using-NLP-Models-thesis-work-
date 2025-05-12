@@ -75,11 +75,11 @@ to use a different nordic semiconductor board, please look at https://www.nordic
 ├── flutter_app/              
 ├── nrf/                       
 ├── Test_Framework/           
-    │   ├── starcoder_model.py    
-    │   ├── codegen_model.py      
-    │   ├── test_prompts/         
-    │   ├── evaluation/           
-    │   └── requirements.txt      
+ │   ├── starcoder_model.py    
+ │   ├── codegen_model.py      
+ │   ├── test_prompts/         
+ │   ├── evaluation/           
+ │   └── requirements.txt      
 ├── README.md                 
 
 ## How to reproduce results
