@@ -74,13 +74,14 @@ to use a different nordic semiconductor board, please look at https://www.nordic
 	•	flutter_app/ – Flutter BLE application
 	•	nrf/ – Nordic SDK sample (peripheral_uart)
 	•	Test_Framework/ – NLP test framework
+    •	requirements.txt – Python dependencies
+	•	README.md – Project documentation (this file)  
 	•	NLP_models/ – Scripts for each model:
 	•	test_CodeGen.py
 	•	test_CodeT5.py
 	•	test_GPT_Neox.py
 	•	test_StarCoder.py
-	•	requirements.txt – Python dependencies
-	•	README.md – Project documentation (this file)      
+	    
 
 ## How to reproduce results
 How to Reproduce Results
