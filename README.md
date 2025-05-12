@@ -78,10 +78,10 @@ to use a different nordic semiconductor board, please look at https://www.nordic
 	
     Test_Framework/
     NLP_models/ – NLP test framework
-        test_CodeGen.py 
-        test_CodeT5.py 
-        test_GPT_Neox.py 
-        test_StarCoder.py 
+     test_CodeGen.py 
+     test_CodeT5.py 
+     test_GPT_Neox.py 
+     test_StarCoder.py 
     requirements.txt – Python dependencies
 	
     README.md – Project documentation (this file)             
