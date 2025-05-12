@@ -72,19 +72,16 @@ to use a different nordic semiconductor board, please look at https://www.nordic
 
 # Repository structure 
 
-	flutter_app/ – Flutter BLE application
-	
-    nrf/ – Nordic SDK sample (peripheral_uart)
-	
-    Test_Framework/
-    NLP_models/ – NLP test framework
-     test_CodeGen.py 
-     test_CodeT5.py 
-     test_GPT_Neox.py 
-     test_StarCoder.py 
-    requirements.txt – Python dependencies
-	
-    README.md – Project documentation (this file)             
+	•	flutter_app/ – Flutter BLE application
+	•	nrf/ – Nordic SDK sample (peripheral_uart)
+	•	Test_Framework/ – NLP test framework
+    • NLP_models/ – Scripts for each model
+        • test_CodeGen.py
+        • test_CodeT5.py
+        • test_GPT_Neox.py
+        • test_StarCoder.py
+    • requirements.txt – Python dependencies
+	•	README.md – Project documentation (this file)           
 
 ## How to reproduce results
 How to Reproduce Results
